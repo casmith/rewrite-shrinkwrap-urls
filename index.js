@@ -21,6 +21,7 @@ module.exports = function rewriteShrinkwrapUrls (shrinkwrap, opts) {
       before = value.resolved
       after = baseUrl + npmUrl(key, before)
       value.resolved = transformer(after, before, key, value.version)
+      value.from = value.resolved
     }
   })
 }
